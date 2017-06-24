@@ -1,0 +1,12 @@
+{
+  "name": "generator-odin-scss",
+  "version": "1.0.0",
+  "description": "my take on smacss and atomic css",
+  "main": "generators/app",
+  "repository": "git@github.com:mike3run/odin-scss.git",
+  "author": "Miguel Palau <mpalauzarza@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "yeoman-generator": "^1.1.1"
+  }
+}
