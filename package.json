@@ -10,6 +10,7 @@
   ],
   "license": "MIT",
   "dependencies": {
+    "clipboardy": "^1.1.4",
     "yeoman-generator": "^1.1.1"
   }
 }
