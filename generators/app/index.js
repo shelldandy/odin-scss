@@ -4,7 +4,10 @@ const Generator = require('yeoman-generator')
 
 class OdinSCSS extends Generator {
   copyScss () {
-    this.log('You are pretty cool')
+    this.fs.copy(
+      this.templatePath('**/*'),
+      this.destinationPath('src/assets/styles')
+    )
   }
   sayGoodBye () {
     this.log('Time to part')
