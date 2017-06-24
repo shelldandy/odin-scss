@@ -3,12 +3,8 @@
 // =======================================
 
 // Typography
-
-// Use this to insert a Google Font the Import Function Comes from Manila Mixins
-// If you won't use Google Fonts you can use Null or remove the line.
-$font-url--google: null;
 $system-fonts: -apple-system, system-ui, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif;
-$font-family--primary: 'Source Sans Pro', sans-serif;
+$font-family--primary: 'Open Sans', sans-serif;
 
 // Text
 $base-font-size: 1em;
@@ -22,48 +18,24 @@ $ms-ratio: $major-third;
 $total-stops: 5;
 
 // Typographic Weights
-$fw--thin: 100;
-$fw--extra-light: 200;
-$fw--light: 300;
-$fw--regular: 400;
-$fw--medium: 500;
-$fw--semi-bold: 600;
-$fw--bold: 700;
-$fw--extra-bold: 800;
-$fw--ultra-bold: 900;
+$fw-thin: 100;
+$fw-extra-light: 200;
+$fw-light: 300;
+$fw-regular: 400;
+$fw-medium: 500;
+$fw-semi-bold: 600;
+$fw-bold: 700;
+$fw-extra-bold: 800;
+$fw-ultra-bold: 900;
 
-// Primary Colors
-$c-transparent:         transparent;
-$c-black:               #000000;
-$c-medium-jungle-green: #292e31;
-$c-liver:               #4d4d4d;
-$c-feldgrau:            #515557;
-$c-auro-metal-saurus:   #6b7c93;
-$c-manatee :            #939da3;
-$c-portland-orange:     #ff5722;
-$c-orange-peel:         #ff9800;
-$c-banana-yellow:       #ffeb3b;
-$c-dandelion:           #e7d32b;
-$c-dark-goldenrod:      #cbb607;
-$c-medium-sea-green:    #4caf50;
-$c-cornflower-blue:     #0054A8;
-$c-science-blue:        #0068CF;
-$c-true-blue:           #006ddb;
-$c-lavender-gray:       #c4cbd4;
-$c-white-smoke:         #f5f7f9;
-$c-ghost-white:         #f6f9fc;
-$c-white:               #ffffff;
+// Colors
+$white: #ffffff;
+$black: #4a4a4a;
+$gray: #797e83;
+$orange: #EC7024;
+$blue: #2ba5e0;
 
-// Alias
-$black:                     $c-black;
-$blue:                      $c-true-blue;
-$green:                     $c-medium-sea-green;
-$white:                     $c-white;
-$gray:                      #f5f7f9;
-$orange:                    $c-orange-peel;
-$yellow:                    $c-banana-yellow;
-$jungle:                    $c-medium-jungle-green;
-$main-color:                $blue;
+$main-color: $orange;
 
 // Transitions
 $trns-duration: .2s;
@@ -76,9 +48,7 @@ $columns--total: 12;
 
 // Breakpoints
 $breakpoints: (
-  xs: 0,
-  sm: 576px,
-  md: 768px,
-  lg: 992px,
-  xl: 1200px
+  tablet      : em(768px, 16),
+  laptop      : em(1024px, 16),
+  desktop     : em(1440px, 16)
 );
