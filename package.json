@@ -5,6 +5,9 @@
   "main": "generators/app",
   "repository": "git@github.com:mike3run/odin-scss.git",
   "author": "Miguel Palau <mpalauzarza@gmail.com>",
+  "files": [
+    "generators"
+  ],
   "license": "MIT",
   "dependencies": {
     "yeoman-generator": "^1.1.1"
