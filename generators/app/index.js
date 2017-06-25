@@ -29,6 +29,7 @@ class OdinSCSS extends Generator {
   }
 
   copyScss () {
+    this.fs.delete('src/assets/styles')
     this.fs.copy(
       this.templatePath('**/*'),
       this.destinationPath('src/assets/styles')
