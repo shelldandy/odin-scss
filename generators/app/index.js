@@ -6,7 +6,11 @@ const clipboardy = require('clipboardy')
 class OdinSCSS extends Generator {
   constructor (args, opts) {
     super(args, opts)
-    this.option('yarn')
+    this.option('yarn', {
+      desc: 'Should we use yarn to install stuff?',
+      type: Boolean,
+      required: false
+    })
   }
 
   welcome () {
