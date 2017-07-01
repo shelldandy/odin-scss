@@ -1,0 +1,5 @@
+name: odin
+root: ~/git/odin
+windows:
+  - editor: eval $EDITOR
+  - parrot: tiny-care-terminal
