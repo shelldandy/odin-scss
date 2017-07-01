@@ -14,4 +14,7 @@ plug and play situation.
 
 ## Instructions
 
-To de determined...
+```
+$ npm install --global yo generator-odin-scss
+$ yo odin-scss
+```
