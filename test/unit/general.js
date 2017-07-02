@@ -5,9 +5,8 @@ import process from 'process'
 import { allTheFiles } from '../helpers/filesToAssert'
 import makeFilePath from '../helpers/makeFilePath'
 
-// Actual test
 describe('Assert basic copying works', function () {
-  before('scaffolding everything...', function (done) {
+  before(function (done) {
     helpers.run(path.join(process.cwd(), 'generators', 'app'))
       .inDir(path.join(__dirname, 'tmp'))
       .withPrompts({
