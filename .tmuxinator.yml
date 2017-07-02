@@ -1,5 +1,9 @@
 name: odin
 root: ~/git/odin-scss
 windows:
-  - editor: eval $EDITOR
+  - editor:
+      layout: fb9c,208x60,0,0{152x60,0,0,0,55x60,153,0,2}
+      panes:
+        - eval $EDITOR
+        - yarn test
   - parrot: tiny-care-terminal

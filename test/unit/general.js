@@ -24,4 +24,6 @@ describe('Assert basic copying works', function () {
   it('Should copy properly all the files needed', function () {
     assert.file(allTheFiles.map(makeFilePath))
   })
+
+  it('Should copy the files in the specified directory')
 })
