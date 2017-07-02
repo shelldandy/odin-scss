@@ -1,5 +1,5 @@
 name: odin
-root: ~/git/odin
+root: ~/git/odin-scss
 windows:
   - editor: eval $EDITOR
   - parrot: tiny-care-terminal
