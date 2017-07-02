@@ -10,7 +10,7 @@
   ],
   "license": "MIT",
   "scripts": {
-    "test": "mocha test/unit/*.js --compilers js:babel-register"
+    "test": "mocha test/unit/*.js --require babel-register"
   },
   "dependencies": {
     "clipboardy": "^1.1.4",

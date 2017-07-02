@@ -1,3 +1,11 @@
-const basePath = 'src/assets/styles'
+/**
+ * makeFilePath
+ *
+ * @param str
+ * @returns {str} pretty file path
+ */
+function makeFilePath (str) {
+  return `${this}/${str}`
+}
 
-export default str => `${basePath}/${str}`
+export default makeFilePath

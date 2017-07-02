@@ -5,12 +5,15 @@ import process from 'process'
 import { allTheFiles } from '../helpers/filesToAssert'
 import makeFilePath from '../helpers/makeFilePath'
 
+const basePath = ''
+
 describe('Assert basic copying works', function () {
   before(function (done) {
     helpers.run(path.join(process.cwd(), 'generators', 'app'))
       .inDir(path.join(__dirname, 'tmp'))
       .withPrompts({
-        yarn: true
+        yarn: true,
+        basePath
       })
       .on('end', done)
   })
@@ -22,8 +25,9 @@ describe('Assert basic copying works', function () {
   })
 
   it('Should copy properly all the files needed', function () {
-    assert.file(allTheFiles.map(makeFilePath))
+    assert.file(allTheFiles.map(makeFilePath, basePath))
   })
 
   it('Should copy the files in the specified directory')
+  it('Should remove ending slash if provided')
 })
