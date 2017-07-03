@@ -1,9 +1,9 @@
-// Do we need a grid?
+<% if (grid) { %>
 @import "grid";
 @import "container";
 @import "row";
-
-// Do we need atomic for life?
+<% } %>
+<% if (atomic) { %>
 @import "borders";
 @import "display";
 @import "flexbox";
@@ -12,3 +12,4 @@
 @import "margin";
 @import "padding";
 @import "position";
+<% } %>

@@ -4,4 +4,6 @@
 
 // Let's get to business
 @import "vendor/fonts";
+<% if (vendorReset) { %>
 @import "vendor/reset";
+<% } %>

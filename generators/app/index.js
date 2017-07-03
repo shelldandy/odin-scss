@@ -12,19 +12,39 @@ class OdinSCSS extends Generator {
   prompts () {
     return this.prompt([
       {
-        type: 'confirm',
-        name: 'yarn',
-        message: 'Should I install extra dependencies needed with Yarn?',
-        default: true
-      }, {
         type: 'input',
         name: 'basePath',
         message: 'Where do I install this? Use a dot (.) to install on this folder.',
         default: 'src/assets/styles'
-      }, {
+      },
+      {
         type: 'confirm',
         name: 'deleteFolder',
         message: 'Delete the original styles folder?',
+        default: true
+      },
+      {
+        type: 'confirm',
+        name: 'grid',
+        message: 'Do you need a grid?',
+        default: true
+      },
+      {
+        type: 'confirm',
+        name: 'atomic',
+        message: 'Would you need some atomic goodies?',
+        default: true
+      },
+      {
+        type: 'confirm',
+        name: 'vendorReset',
+        message: 'Do you need a reset?',
+        default: true
+      },
+      {
+        type: 'confirm',
+        name: 'yarn',
+        message: 'Should I install extra dependencies needed with Yarn?',
         default: true
       }
     ])
@@ -32,6 +52,9 @@ class OdinSCSS extends Generator {
       this.options.yarn = props.yarn
       this.options.basePath = props.basePath
       this.options.deleteFolder = props.deleteFolder
+      this.options.grid = props.grid
+      this.options.atomic = props.atomic
+      this.options.vendorReset = props.vendorReset
     })
   }
 
@@ -39,9 +62,14 @@ class OdinSCSS extends Generator {
     this.options.deleteFolder
       ? this.fs.delete(this.options.basePath)
       : this.log('Skipping deleting of base folder')
-    this.fs.copy(
+    this.fs.copyTpl(
       this.templatePath('**/*'),
-      this.destinationPath(this.options.basePath)
+      this.destinationPath(this.options.basePath),
+      {
+        atomic: this.options.atomic,
+        grid: this.options.grid,
+        vendorReset: this.options.vendorReset
+      }
     )
   }
 
