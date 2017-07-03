@@ -8,25 +8,16 @@ import makeFilePath from '../helpers/makeFilePath'
 const basePath = '.'
 
 describe('Assert basic copying works', function () {
-  before(function (done) {
+  it('Should copy properly all the files needed', function () {
     helpers.run(path.join(process.cwd(), 'generators', 'app'))
-      .inDir(path.join(__dirname, 'tmp'))
       .withPrompts({
         yarn: false,
         basePath,
         deleteFolder: false
       })
-      .on('end', done)
-  })
-
-  after(function () {
-    helpers.run(path.join(process.cwd(), 'generators', 'app'))
-      .inDir(path.join(__dirname, 'tmp'))
-      .cleanTestDirectory()
-  })
-
-  it('Should copy properly all the files needed', function () {
-    assert.file(allTheFiles.map(makeFilePath, basePath))
+      .then(function () {
+        assert.file(allTheFiles.map(makeFilePath, basePath))
+      })
   })
 
   it('Should copy the files in the specified directory')
