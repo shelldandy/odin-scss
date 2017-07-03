@@ -5,7 +5,7 @@ const clipboardy = require('clipboardy')
 
 class OdinSCSS extends Generator {
   welcome () {
-    this.log('Hi, welcome to OdinSCSS')
+    this.log('👋 Welcome to OdinSCSS 🐶')
     this.log('Created with love by Miguel Palau')
   }
 

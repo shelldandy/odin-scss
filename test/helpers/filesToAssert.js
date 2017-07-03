@@ -24,18 +24,30 @@ export const mustHaveFiles = [
   'vendor/_fonts.scss'
 ]
 
-export const allTheFiles = [
-  ...mustHaveFiles,
-  'main/3-layout/_borders.scss',
+export const gridFiles = [
+  'main/3-layout/_grid.scss',
   'main/3-layout/_container.scss',
+  'main/3-layout/_row.scss'
+]
+
+export const atomicFiles = [
+  'main/3-layout/_borders.scss',
   'main/3-layout/_display.scss',
   'main/3-layout/_flexbox.scss',
   'main/3-layout/_font-sizes.scss',
   'main/3-layout/_font-styles.scss',
-  'main/3-layout/_grid.scss',
   'main/3-layout/_margin.scss',
   'main/3-layout/_padding.scss',
-  'main/3-layout/_position.scss',
-  'main/3-layout/_row.scss',
+  'main/3-layout/_position.scss'
+]
+
+export const vendorReset = [
   'vendor/_reset.scss'
+]
+
+export const allTheFiles = [
+  ...mustHaveFiles,
+  ...gridFiles,
+  ...atomicFiles,
+  ...vendorReset
 ]
