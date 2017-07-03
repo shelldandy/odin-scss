@@ -11,15 +11,24 @@ describe('Assert basic copying works', function () {
     helpers.run(path.join(process.cwd(), 'generators', 'app'))
       .withPrompts({
         yarn: false,
-        basePath,
-        deleteFolder: false
+        deleteFolder: false,
+        basePath
       })
       .then(function () {
         assert.file(allTheFiles.map(makeFilePath, basePath))
       })
   })
 
-  it('Should copy the files in the specified directory')
-
-  it('Should remove ending slash if provided')
+  it('Should copy the files in the specified directory', function () {
+    const basePath = 'some/deeply/nested/dir'
+    helpers.run(path.join(process.cwd(), 'generators', 'app'))
+      .withPrompts({
+        yarn: false,
+        deleteFolder: false,
+        basePath
+      })
+      .then(function () {
+        assert.file(allTheFiles.map(makeFilePath, basePath))
+      })
+  })
 })
