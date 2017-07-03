@@ -3,35 +3,32 @@ import assert from 'yeoman-assert'
 import path from 'path'
 import process from 'process'
 import { allTheFiles } from '../helpers/filesToAssert'
+import makeFilePath from '../helpers/makeFilePath'
+
+const basePath = '.'
 
 describe('Assert basic copying works', function () {
-  it('Should copy properly all the files needed', function () {
+  before(function (done) {
     helpers.run(path.join(process.cwd(), 'generators', 'app'))
+      .inDir(path.join(__dirname, 'tmp'))
       .withPrompts({
         yarn: false,
         deleteFolder: false,
         atomic: true,
         grid: true,
         vendorReset: true,
-        basePath: '.'
+        basePath
       })
-      .then(function () {
-        assert.file(allTheFiles)
-      })
+      .on('end', done)
   })
 
-  it('Should copy the files in the specified directory', function () {
+  after(function () {
     helpers.run(path.join(process.cwd(), 'generators', 'app'))
-      .withPrompts({
-        yarn: false,
-        deleteFolder: false,
-        atomic: true,
-        grid: true,
-        vendorReset: true,
-        basePath: 'some/deeply/nested/dir'
-      })
-      .then(function () {
-        assert.file(allTheFiles)
-      })
+      .inDir(path.join(__dirname, 'tmp'))
+      .cleanTestDirectory()
+  })
+
+  it('Should copy properly all the files needed', function () {
+    assert.file(allTheFiles.map(makeFilePath, basePath))
   })
 })
