@@ -4,39 +4,44 @@ const Generator = require('yeoman-generator')
 const clipboardy = require('clipboardy')
 
 class OdinSCSS extends Generator {
-  constructor (args, opts) {
-    super(args, opts)
-    this.option('yarn', {
-      desc: 'Should we use yarn to install stuff?',
-      type: Boolean,
-      required: false
-    })
-  }
-
   welcome () {
     this.log('Hi, welcome to OdinSCSS')
     this.log('Created with love by Miguel Palau')
   }
 
-  askForYarn () {
-    return this.options.yarn
-    ? true
-    : this.prompt([{
-      type: 'confirm',
-      name: 'yarn',
-      message: 'Should I install extra dependencies needed with Yarn?',
-      default: true
-    }])
+  prompts () {
+    return this.prompt([
+      {
+        type: 'confirm',
+        name: 'yarn',
+        message: 'Should I install extra dependencies needed with Yarn?',
+        default: true
+      }, {
+        type: 'input',
+        name: 'basePath',
+        message: 'Where do I install this? Use a dot (.) to install on this folder.',
+        default: 'src/assets/styles'
+      }, {
+        type: 'confirm',
+        name: 'deleteFolder',
+        message: 'Delete the original styles folder?',
+        default: true
+      }
+    ])
     .then(props => {
       this.options.yarn = props.yarn
+      this.options.basePath = props.basePath
+      this.options.deleteFolder = props.deleteFolder
     })
   }
 
   copyScss () {
-    this.fs.delete('src/assets/styles')
+    this.options.deleteFolder
+      ? this.fs.delete(this.options.basePath)
+      : this.log('Skipping deleting of base folder')
     this.fs.copy(
       this.templatePath('**/*'),
-      this.destinationPath('src/assets/styles')
+      this.destinationPath(this.options.basePath)
     )
   }
 

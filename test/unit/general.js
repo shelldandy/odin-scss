@@ -5,15 +5,16 @@ import process from 'process'
 import { allTheFiles } from '../helpers/filesToAssert'
 import makeFilePath from '../helpers/makeFilePath'
 
-const basePath = ''
+const basePath = '.'
 
 describe('Assert basic copying works', function () {
   before(function (done) {
     helpers.run(path.join(process.cwd(), 'generators', 'app'))
       .inDir(path.join(__dirname, 'tmp'))
       .withPrompts({
-        yarn: true,
-        basePath
+        yarn: false,
+        basePath,
+        deleteFolder: false
       })
       .on('end', done)
   })
