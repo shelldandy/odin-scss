@@ -1,16 +1,14 @@
 import helpers from 'yeoman-test'
 import assert from 'yeoman-assert'
 import path from 'path'
-import process from 'process'
 import { allTheFiles } from '../helpers/filesToAssert'
 import makeFilePath from '../helpers/makeFilePath'
 
 const basePath = '.'
 
 describe('Assert basic copying works', function () {
-  before(function (done) {
-    helpers.run(path.join(process.cwd(), 'generators', 'app'))
-      .inDir(path.join(__dirname, 'tmp'))
+  before(function () {
+    return helpers.run(path.join(__dirname, '../../generators/app'))
       .withPrompts({
         yarn: false,
         deleteFolder: false,
@@ -19,13 +17,7 @@ describe('Assert basic copying works', function () {
         vendorReset: true,
         basePath
       })
-      .on('end', done)
-  })
-
-  after(function () {
-    helpers.run(path.join(process.cwd(), 'generators', 'app'))
-      .inDir(path.join(__dirname, 'tmp'))
-      .cleanTestDirectory()
+      .toPromise()
   })
 
   it('Should copy properly all the files needed', function () {

@@ -1,7 +1,6 @@
 import helpers from 'yeoman-test'
 import assert from 'yeoman-assert'
 import path from 'path'
-import process from 'process'
 import {
   gridFiles,
   atomicFiles,
@@ -12,9 +11,8 @@ import makeFilePath from '../helpers/makeFilePath'
 const basePath = '.'
 
 describe('Assert conditional files get copied or not', function () {
-  before(function (done) {
-    helpers.run(path.join(process.cwd(), 'generators', 'app'))
-      .inDir(path.join(__dirname, 'tmp'))
+  before(function () {
+    return helpers.run(path.join(__dirname, '../../generators/app'))
       .withPrompts({
         yarn: false,
         deleteFolder: false,
@@ -22,14 +20,7 @@ describe('Assert conditional files get copied or not', function () {
         grid: false,
         vendorReset: false,
         basePath
-      })
-      .on('end', done)
-  })
-
-  after(function () {
-    helpers.run(path.join(process.cwd(), 'generators', 'app'))
-      .inDir(path.join(__dirname, 'tmp'))
-      .cleanTestDirectory()
+      }).toPromise()
   })
 
   it('Should not copy grid files if not needed', function () {
