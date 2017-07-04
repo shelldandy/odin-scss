@@ -11,7 +11,7 @@ import makeFilePath from '../helpers/makeFilePath'
 const basePath = '.'
 
 describe('Assert conditional files get copied or not', function () {
-  before(function () {
+  beforeEach(function () {
     return helpers.run(path.join(__dirname, '../../generators/app'))
       .withPrompts({
         yarn: false,

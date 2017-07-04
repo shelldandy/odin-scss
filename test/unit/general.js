@@ -7,7 +7,7 @@ import makeFilePath from '../helpers/makeFilePath'
 const basePath = '.'
 
 describe('Assert basic copying works', function () {
-  before(function () {
+  beforeEach(function () {
     return helpers.run(path.join(__dirname, '../../generators/app'))
       .withPrompts({
         yarn: false,
