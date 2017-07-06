@@ -1,7 +1,12 @@
 'use strict'
-
 const Generator = require('yeoman-generator')
 const clipboardy = require('clipboardy')
+const {
+  mustHaveFiles,
+  gridFiles,
+  atomicFiles,
+  vendorReset
+} = require('../../test/helpers/filesToAssert')
 
 class OdinSCSS extends Generator {
   welcome () {
@@ -58,19 +63,72 @@ class OdinSCSS extends Generator {
     })
   }
 
-  copyScss () {
-    this.options.deleteFolder
+  deleteFiles () {
+    return this.options.deleteFolder
       ? this.fs.delete(this.options.basePath)
       : this.log('Skipping deleting of base folder')
-    this.fs.copyTpl(
-      this.templatePath('**/*'),
-      this.destinationPath(this.options.basePath),
-      {
-        atomic: this.options.atomic,
-        grid: this.options.grid,
-        vendorReset: this.options.vendorReset
-      }
-    )
+  }
+
+  copyMustHaveFiles () {
+    return mustHaveFiles.map(file => {
+      this.fs.copyTpl(
+        this.templatePath(file),
+        this.destinationPath(this.options.basePath + '/' + file),
+        {
+          atomic: this.options.atomic,
+          grid: this.options.grid,
+          vendorReset: this.options.vendorReset
+        }
+      )
+    })
+  }
+
+  copyGridFiles () {
+    return this.options.grid
+      ? gridFiles.map(file => {
+        this.fs.copyTpl(
+          this.templatePath(file),
+          this.destinationPath(this.options.basePath + '/' + file),
+          {
+            atomic: this.options.atomic,
+            grid: this.options.grid,
+            vendorReset: this.options.vendorReset
+          }
+        )
+      })
+      : this.log('Skipping grid files')
+  }
+
+  copyAtomicFiles () {
+    return this.options.atomic
+      ? atomicFiles.map(file => {
+        this.fs.copyTpl(
+          this.templatePath(file),
+          this.destinationPath(this.options.basePath + '/' + file),
+          {
+            atomic: this.options.atomic,
+            grid: this.options.grid,
+            vendorReset: this.options.vendorReset
+          }
+        )
+      })
+      : this.log('Skipping grid files')
+  }
+
+  copyVendorReset () {
+    return this.options.vendorReset
+      ? vendorReset.map(file => {
+        this.fs.copyTpl(
+          this.templatePath(file),
+          this.destinationPath(this.options.basePath + '/' + file),
+          {
+            atomic: this.options.atomic,
+            grid: this.options.grid,
+            vendorReset: this.options.vendorReset
+          }
+        )
+      })
+      : this.log('Skipping grid files')
   }
 
   installDependencies () {

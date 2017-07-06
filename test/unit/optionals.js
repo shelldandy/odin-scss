@@ -33,6 +33,5 @@ describe('Assert conditional files get copied or not', function () {
 
   it('Should not copy vendor reset if not needed', function () {
     assert.noFile(vendorReset.map(makeFilePath, basePath))
-    assert.fileContent('vendor.scss', '@import "vendor/reset";')
   })
 })
