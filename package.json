@@ -10,15 +10,16 @@
   ],
   "license": "MIT",
   "scripts": {
-    "test": "mocha test/unit/*.js --require babel-register"
+    "test": "jest"
   },
   "dependencies": {
     "clipboardy": "^1.1.4",
     "yeoman-generator": "^1.1.1"
   },
   "devDependencies": {
+    "babel-jest": "^20.0.3",
     "babel-preset-env": "^1.5.2",
-    "babel-register": "^6.24.1",
+    "jest": "^20.0.4",
     "mocha": "^3.4.2",
     "standard": "^10.0.2",
     "yeoman-assert": "^3.0.0",
