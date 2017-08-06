@@ -10,6 +10,10 @@
   ],
   "license": "MIT",
   "scripts": {
+    "copy": "cpy src generators",
+    "clean": "del generators",
+    "compile": "babel -d generators/ --ignore templates/ generators/",
+    "get-ready": "npm run clean; npm run copy; npm run compile",
     "pretest": "standard",
     "test": "jest",
     "postversion": "git push; git push --tags; npm publish"
@@ -24,6 +28,8 @@
     "babel-jest": "^20.0.3",
     "babel-plugin-add-module-exports": "^0.2.1",
     "babel-preset-env": "^1.5.2",
+    "cpy-cli": "^1.0.1",
+    "del-cli": "^1.1.0",
     "jest": "^20.0.4",
     "mocha": "^3.4.2",
     "standard": "^10.0.2",
