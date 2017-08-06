@@ -5,14 +5,14 @@ import {
   gridFiles,
   atomicFiles,
   vendorReset
-} from '../../generators/app/filesToAssert'
+} from '../src/app/filesToAssert'
 import makeFilePath from '../helpers/makeFilePath'
 
 const basePath = '.'
 
 describe('Assert conditional files get copied or not', function () {
   beforeEach(function () {
-    return helpers.run(path.join(__dirname, '../../generators/app'))
+    return helpers.run(path.join(__dirname, '../src/app'))
       .withPrompts({
         yarn: false,
         deleteFolder: false,

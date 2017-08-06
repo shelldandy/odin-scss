@@ -1,14 +1,14 @@
 import helpers from 'yeoman-test'
 import assert from 'yeoman-assert'
 import path from 'path'
-import { allTheFiles } from '../../generators/app/filesToAssert'
+import { allTheFiles } from '../src/app/filesToAssert'
 import makeFilePath from '../helpers/makeFilePath'
 
 const basePath = '.'
 
 describe('Assert basic copying works', function () {
   beforeEach(function () {
-    return helpers.run(path.join(__dirname, '../../generators/app'))
+    return helpers.run(path.join(__dirname, '../src/app'))
       .withPrompts({
         yarn: false,
         deleteFolder: false,
