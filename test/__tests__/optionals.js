@@ -5,7 +5,7 @@ import {
   gridFiles,
   atomicFiles,
   vendorReset
-} from '../helpers/filesToAssert'
+} from '../../generators/app/filesToAssert'
 import makeFilePath from '../helpers/makeFilePath'
 
 const basePath = '.'

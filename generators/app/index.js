@@ -6,7 +6,7 @@ const {
   gridFiles,
   atomicFiles,
   vendorReset
-} = require('../../test/helpers/filesToAssert')
+} = require('./filesToAssert')
 
 class OdinSCSS extends Generator {
   welcome () {

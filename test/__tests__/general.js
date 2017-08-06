@@ -1,7 +1,7 @@
 import helpers from 'yeoman-test'
 import assert from 'yeoman-assert'
 import path from 'path'
-import { allTheFiles } from '../helpers/filesToAssert'
+import { allTheFiles } from '../../generators/app/filesToAssert'
 import makeFilePath from '../helpers/makeFilePath'
 
 const basePath = '.'
