@@ -8,7 +8,14 @@ const {
   vendorReset
 } = require('./filesToAssert')
 
+const updateNotifier = require('update-notifier')
+const pkg = require('../../package.json')
+
 class OdinSCSS extends Generator {
+  notify () {
+    updateNotifier({pkg}).notify()
+  }
+
   welcome () {
     this.log('👋 Welcome to OdinSCSS 🐶')
     this.log('Created with love by Miguel Palau')
