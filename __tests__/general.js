@@ -8,7 +8,7 @@ const basePath = '.'
 
 describe('Assert basic copying works', function () {
   beforeEach(function () {
-    return helpers.run(path.join(__dirname, '../src/app'))
+    return helpers.run(path.join(__dirname, '../generators/app'))
       .withPrompts({
         yarn: false,
         deleteFolder: false,

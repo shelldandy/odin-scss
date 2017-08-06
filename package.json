@@ -15,8 +15,8 @@
     "clean": "del generators",
     "compile": "babel -d generators/ --ignore templates/ generators/",
     "get-ready": "npm run clean; npm run make-dir; npm run copy; npm run compile",
-    "pretest": "standard",
-    "test": "jest",
+    "pretest": "npm run get-ready",
+    "test": "standard; jest",
     "postversion": "git push; git push --tags; npm publish"
   },
   "dependencies": {
