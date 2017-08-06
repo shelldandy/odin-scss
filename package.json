@@ -10,7 +10,8 @@
   ],
   "license": "MIT",
   "scripts": {
-    "test": "jest"
+    "test": "jest",
+    "postversion": "git push; git push --tags; npm publish"
   },
   "dependencies": {
     "clipboardy": "^1.1.4",
