@@ -1,17 +1,16 @@
 'use strict'
-const Generator = require('yeoman-generator')
-const clipboardy = require('clipboardy')
-const {
+import Yeoman from 'yeoman-generator'
+import clipboardy from 'clipboardy'
+import {
   mustHaveFiles,
   gridFiles,
   atomicFiles,
   vendorReset
-} = require('./filesToAssert')
-
-const updateNotifier = require('update-notifier')
+} from './filesToAssert'
+import updateNotifier from 'update-notifier'
 const pkg = require('../../package.json')
 
-class OdinSCSS extends Generator {
+class OdinSCSS extends Yeoman {
   notify () {
     updateNotifier({pkg}).notify()
   }
@@ -165,4 +164,4 @@ class OdinSCSS extends Generator {
   }
 }
 
-module.exports = OdinSCSS
+export default OdinSCSS
