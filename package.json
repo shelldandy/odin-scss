@@ -14,14 +14,13 @@
     "copy": "cp-cli -d src generators",
     "clean": "del generators",
     "compile": "babel -d generators/ --ignore templates/ generators/",
-    "get-ready": "npm run clean; npm run make-dir; npm run copy; npm run compile",
+    "get-ready": "npm run clean; npm run copy; npm run compile",
     "pretest": "npm run get-ready",
     "test": "standard; jest",
     "postversion": "git push; git push --tags; npm publish",
     "prepublish": "npm run get-ready"
   },
   "dependencies": {
-    "jest-cli": "^21.2.1",
     "update-notifier": "^2.2.0",
     "yeoman-generator": "^1.1.1"
   },
@@ -32,8 +31,7 @@
     "babel-preset-env": "^1.5.2",
     "cp-cli": "^1.0.2",
     "del-cli": "^1.1.0",
-    "jest": "^21.2.1",
-    "make-dir-cli": "^1.0.0",
+    "jest-cli": "^21.2.1",
     "mocha": "^3.4.2",
     "standard": "^10.0.2",
     "yeoman-assert": "^3.0.0",
