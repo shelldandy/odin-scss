@@ -1,4 +1,3 @@
-'use strict'
 import Yeoman from 'yeoman-generator'
 import clipboardy from 'clipboardy'
 import {
