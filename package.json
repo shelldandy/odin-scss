@@ -10,7 +10,6 @@
   ],
   "license": "MIT",
   "scripts": {
-    "make-dir": "make-dir generators",
     "copy": "cp-cli -d src generators",
     "clean": "del generators",
     "compile": "babel -d generators/ --ignore templates/ generators/",
