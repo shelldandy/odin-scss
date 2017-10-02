@@ -1,6 +1,4 @@
-'use strict'
 import Yeoman from 'yeoman-generator'
-import clipboardy from 'clipboardy'
 import {
   mustHaveFiles,
   gridFiles,
@@ -144,15 +142,6 @@ class OdinSCSS extends Yeoman {
         'modularscale-sass'
       ])
       : this.log('Skipping yarn install')
-  }
-
-  copyPaths () {
-    this.log('Now I\'m gonna copy the includePaths so you place them where they need to be')
-    const includePaths = `
-      './node_modules/modularscale-sass/stylesheets',
-      './node_modules/manila-mixins/src'
-    `
-    clipboardy.writeSync(includePaths)
   }
 
   sayGoodBye () {
