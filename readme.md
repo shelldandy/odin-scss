@@ -1,5 +1,7 @@
 # Odin Sass Starting Point
 
+![Deps](https://david-dm.org/mike3run/odin-scss.svg)
+
 ![Hopefully one day Odin](https://media0.giphy.com/media/ngzhAbaGP1ovS/200w.gif)
 
 Over the years I've developed a set of really scalable sass folders that
