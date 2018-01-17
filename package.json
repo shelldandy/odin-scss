@@ -1,6 +1,6 @@
 {
   "name": "generator-odin-scss",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "description": "my take on smacss and atomic css",
   "main": "generators/app",
   "repository": "git@github.com:mike3run/odin-scss.git",
