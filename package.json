@@ -17,7 +17,7 @@
     "pretest": "npm run get-ready",
     "test": "standard; jest",
     "postversion": "git push; git push --tags; npm publish",
-    "prepublish": "npm run get-ready"
+    "prepare": "npm run get-ready"
   },
   "dependencies": {
     "update-notifier": "^2.2.0",
