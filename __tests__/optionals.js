@@ -25,25 +25,14 @@ describe('Assert conditional files get copied or not', function () {
 
   it('Should not copy grid files if not needed', function () {
     assert.noFile(gridFiles.map(makeFilePath, basePath))
-    assert.noFileContent('main/3-layout/_index.scss', '@import "grid";')
-    assert.noFileContent('main/3-layout/_index.scss', '@import "container";')
-    assert.noFileContent('main/3-layout/_index.scss', '@import "row";')
   })
 
   it('Should not copy atomic files if not needed', function () {
     assert.noFile(atomicFiles.map(makeFilePath, basePath))
-    assert.noFileContent('main/3-layout/_index.scss', '@import "borders";')
-    assert.noFileContent('main/3-layout/_index.scss', '@import "display";')
-    assert.noFileContent('main/3-layout/_index.scss', '@import "flexbox";')
-    assert.noFileContent('main/3-layout/_index.scss', '@import "font-sizes";')
-    assert.noFileContent('main/3-layout/_index.scss', '@import "font-styles";')
-    assert.noFileContent('main/3-layout/_index.scss', '@import "margin";')
-    assert.noFileContent('main/3-layout/_index.scss', '@import "padding";')
-    assert.noFileContent('main/3-layout/_index.scss', '@import "position";')
   })
 
   it('Should not copy vendor reset if not needed', function () {
     assert.noFile(vendorReset.map(makeFilePath, basePath))
-    assert.noFileContent('vendor.scss', '@import "vendor/reset";')
+    assert.noFileContent('vendor/vendor.scss', '@import "reset";')
   })
 })

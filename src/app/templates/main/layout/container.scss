@@ -1,0 +1,11 @@
+@import "../abstracts/index.scss";
+
+:global {
+  .container {
+    position: relative;
+    width: 95%;
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 0 ($column-gutter / 2);
+  }
+}
