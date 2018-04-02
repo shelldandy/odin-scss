@@ -1,67 +1,70 @@
 @import "../abstracts/index.scss";
-html {
-  min-height: 100%;
-  position: relative;
-  background-color: $white;
-  color: $black;
-  font-family: $system-fonts;
-  line-height: $base-line;
-  font-size: $base-font-size;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
 
-  &.wf-active {
-    font-family: $font-family--primary;
+:global {
+  html {
+    min-height: 100%;
+    position: relative;
+    background-color: $white;
+    color: $black;
+    font-family: $system-fonts;
+    line-height: $base-line;
+    font-size: $base-font-size;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+
+    &.wf-active {
+      font-family: $font-family--primary;
+    }
   }
-}
 
-body {
-  font: inherit;
-  line-height: inherit;
-}
-
-input,
-textarea {
-  font-family: inherit;
-}
-
-a {
-  text-decoration: none;
-  color: inherit;
-  transition: $trns-duration;
-  &:focus {
-    outline: 1px dotted;
+  body {
+    font: inherit;
+    line-height: inherit;
   }
-}
 
-// Baseline Headings
-h1,
-.h1 {
-  font-size: ms(5);
-  line-height: 1.2;
-}
+  input,
+  textarea {
+    font-family: inherit;
+  }
 
-h2,
-.h2 {
-  font-size: ms(4);
-  line-height: 1.3;
-}
+  a {
+    text-decoration: none;
+    color: inherit;
+    transition: $trns-duration;
+    &:focus {
+      outline: 1px dotted;
+    }
+  }
 
-h3,
-.h3 {
-  font-size: ms(3);
-}
+  // Baseline Headings
+  h1,
+  .h1 {
+    font-size: ms(5);
+    line-height: 1.2;
+  }
 
-h4, .h4 {
-  font-size: ms(2);
-}
+  h2,
+  .h2 {
+    font-size: ms(4);
+    line-height: 1.3;
+  }
 
-h5,
-.h5 {
-  font-size: ms(1);
-}
+  h3,
+  .h3 {
+    font-size: ms(3);
+  }
 
-h6,
-.h6 {
-  font-size: ms(0);
+  h4, .h4 {
+    font-size: ms(2);
+  }
+
+  h5,
+  .h5 {
+    font-size: ms(1);
+  }
+
+  h6,
+  .h6 {
+    font-size: ms(0);
+  }
 }
