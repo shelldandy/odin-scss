@@ -1,0 +1,6 @@
+// Breakpoints
+$breakpoints: (
+  tablet      : em(768px, 16),
+  laptop      : em(1024px, 16),
+  desktop     : em(1440px, 16)
+);

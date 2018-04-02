@@ -2,6 +2,8 @@ export const mustHaveFiles = [
   'vendor/vendor.scss',
   'main/abstracts/_config.scss',
   'main/abstracts/_functions.scss',
+  'main/abstracts/_breakpoints.scss',
+  'main/abstracts/_colors.scss',
   'main/abstracts/_index.scss',
   'main/abstracts/_mixins.scss',
   'main/abstracts/_resets.scss',
