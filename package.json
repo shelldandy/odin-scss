@@ -20,21 +20,21 @@
     "prepare": "npm run get-ready"
   },
   "dependencies": {
-    "update-notifier": "^2.4.0",
-    "yeoman-generator": "^2.0.3"
+    "update-notifier": "^2.5.0",
+    "yeoman-generator": "^2.0.5"
   },
   "devDependencies": {
     "babel-cli": "^6.26.0",
-    "babel-jest": "^22.4.3",
+    "babel-jest": "^22.4.4",
     "babel-plugin-add-module-exports": "^0.2.1",
-    "babel-preset-env": "^1.6.1",
-    "cp-cli": "^1.1.0",
+    "babel-preset-env": "^1.7.0",
+    "cp-cli": "^1.1.2",
     "del-cli": "^1.1.0",
-    "jest-cli": "^22.4.3",
-    "mocha": "^5.0.5",
+    "jest-cli": "^22.4.4",
+    "mocha": "^5.2.0",
     "standard": "^11.0.1",
     "yeoman-assert": "^3.1.1",
-    "yeoman-test": "^1.7.0"
+    "yeoman-test": "^1.7.2"
   },
   "standard": {
     "globals": [
